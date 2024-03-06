@@ -27,7 +27,7 @@
 </head>
 <body>
     <div id="image-container">
-        <img src="map.png" alt="Image">
+        <img src="test map.png" alt="Image">
         <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M12 2l-5.5 9h4v10h3v-10h4l-5.5-9z"/>
         </svg>
@@ -41,10 +41,16 @@
             const imageHeight = imageContainer.clientHeight;
 
             // Convert latitude and longitude to percentage based on custom ranges
-            const minLatitude = 42.410656;
-            const maxLatitude = 42.425932;
-            const minLongitude = -83.482701;
-            const maxLongitude = -83.471883;
+            // const minLatitude = 42.410656; UNCOMMENT WHEN DONE TESTING
+            // const maxLatitude = 42.425932;
+            // const minLongitude = -83.482701;
+            // const maxLongitude = -83.471883;
+
+            const minLatitude = 42.391871;
+            const maxLatitude = 42.409197;
+            const minLongitude = -83.529540;
+            const maxLongitude = -83.508629;
+
             const latitudePercentage = (position.coords.latitude - minLatitude) / (maxLatitude - minLatitude);
             const longitudePercentage = (position.coords.longitude - minLongitude) / (maxLongitude - minLongitude);
 
