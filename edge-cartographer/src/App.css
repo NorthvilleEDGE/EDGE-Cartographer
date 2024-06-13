@@ -1,0 +1,27 @@
+.App {
+  text-align: left;
+}
+
+.App-map {
+  height: 100vh;
+  object-fit: cover;
+}
+
+.circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
