@@ -32,6 +32,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src="map.jpg" className="App-map" alt="cass-benton-map" />
+        <p>Lat: {latitude} Lng: {longitude}</p>
         <div className="circle" style={circlePosition}></div>
       </header>
     </div>
