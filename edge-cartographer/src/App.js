@@ -16,8 +16,8 @@ function App() {
           const { latitude, longitude } = position.coords;
           setLocation({ lat: latitude, lng: longitude });
           setCirclePosition({
-            top: `${mapRange(latitude, 42.426613, 42.409726, 0, 0.53457943925*window.innerHeight)}px`,
-            left: `${mapRange(longitude, -83.483743, -83.471405, 0, window.innerHeight)}px` });
+            top: `${mapRange(latitude, 42.426613, 42.409726, 0, 858)}px`,
+            left: `${mapRange(longitude, -83.483743, -83.471405, 0, 1605)}px` });
         },
         function(error) {
           console.error("Error getting user location:", error);
