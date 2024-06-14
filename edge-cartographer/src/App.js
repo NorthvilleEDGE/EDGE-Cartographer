@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function mapRange(value, fromSource, toSource, fromTarget, toTarget) {
@@ -7,7 +7,7 @@ function mapRange(value, fromSource, toSource, fromTarget, toTarget) {
 
 function App() {
   const [location, setLocation] = useState({ lat: null, lng: null });
-  const [circlePosition, setCirclePosition] = useState({ top: "0px", left: "0px"});
+  const [circlePosition, setCirclePosition] = useState({ top: "100%", left: "100%"});
 
   useEffect(() => {
     if ("geolocation" in navigator) {
