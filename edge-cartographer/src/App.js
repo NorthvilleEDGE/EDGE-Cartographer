@@ -7,7 +7,7 @@ function mapRange(value, fromSource, toSource, fromTarget, toTarget) {
 
 function App() {
   const [location, setLocation] = useState({ lat: null, lng: null });
-  const [circlePosition, setCirclePosition] = useState({ top: "100%", left: "100%"});
+  const [circlePosition, setCirclePosition] = useState({ top: "0px", left: "0px" });
 
   useEffect(() => {
     if ("geolocation" in navigator) {
