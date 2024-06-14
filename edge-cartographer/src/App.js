@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-function mapRange(value, fromSource, toSource, fromTarget, toTarget) {
-  return (value - fromSource) / (toSource - fromSource) * (toTarget - fromTarget) + fromTarget;
+function mapRange(value, inputStart, inputEnd, outputStart, outputEnd) {
+  return outputStart + ((outputEnd - outputStart) / (inputEnd - inputStart)) * (value - inputStart);
 }
 
 function App() {
