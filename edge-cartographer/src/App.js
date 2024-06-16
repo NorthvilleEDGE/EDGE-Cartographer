@@ -11,6 +11,7 @@ function App() {
   const [circlePosition, setCirclePosition] = useState({ top: `0px`, left: `0px` });
   const [hasVoted, setHasVoted] = useState(localStorage.getItem("hasVoted") === "true");
   const [vote, setVote] = useState(null);
+  const [showThanks, setShowThanks] = useState(false);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -36,6 +37,7 @@ function App() {
       setVote(vote);
       setHasVoted(true);
       localStorage.setItem('hasVoted', true);
+      setShowThanks(true);
       const data = {
         vote,
         time: new Date().toISOString()
@@ -59,6 +61,9 @@ function App() {
           <button className='yes-button' onClick={() => handleVote('yes')}>Yes</button>
           <button className='no-button' onClick={() => handleVote('no')}>No</button>
         </section>
+      )}
+      {showThanks && (
+        <div>Thanks for voting!</div>
       )}
     </div>
   );
