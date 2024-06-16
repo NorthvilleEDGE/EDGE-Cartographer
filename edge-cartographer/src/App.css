@@ -4,6 +4,10 @@
 
 .App-map {
   height: 1605px;
+  width: 858;
+  top: 0;
+  left: 0;
+  position: absolute;
   object-fit: cover;
 }
 
@@ -13,12 +17,11 @@
   height: 15px;
   background-color: red;
   border-radius: 50%;
-  outline-width: 5px;
-  outline-color: rgb(140, 0, 0);
+  border: 5px solid rgb(140, 0, 0);
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

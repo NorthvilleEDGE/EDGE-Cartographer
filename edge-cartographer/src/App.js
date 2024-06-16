@@ -7,7 +7,7 @@ function mapRange(value, inputStart, inputEnd, outputStart, outputEnd) {
 
 function App() {
   const [location, setLocation] = useState({ lat: null, lng: null });
-  const [circlePosition, setCirclePosition] = useState({ top: "0px", left: "0px" });
+  const [circlePosition, setCirclePosition] = useState({ top: `0px`, left: `0px` });
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -16,8 +16,8 @@ function App() {
           const { latitude, longitude } = position.coords;
           setLocation({ lat: latitude, lng: longitude });
           setCirclePosition({
-            top: `${mapRange(latitude, 42.426613, 42.409726, 0, 858)}px`,
-            left: `${mapRange(longitude, -83.483743, -83.471405, 0, 1605)}px` });
+            top: `${mapRange(latitude, 42.426613, 42.409726, 0, 1590)}px`,
+            left: `${mapRange(longitude, -83.483743, -83.471405, 0, 843)}px` });
         },
         function(error) {
           console.error("Error getting user location:", error);
@@ -31,8 +31,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="map.jpg" className="App-map" alt="cass-benton-map" />
-        <p>Lat: {latitude} Lng: {longitude}</p>
+        <img src={process.env.PUBLIC_URL + "/map.jpg"} className="App-map" alt="cass-benton-map" />
         <div className="circle" style={circlePosition}></div>
       </header>
     </div>
