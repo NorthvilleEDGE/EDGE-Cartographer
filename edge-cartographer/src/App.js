@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import axios from 'axios';
 
 function mapRange(value, inputStart, inputEnd, outputStart, outputEnd) {
   return outputStart + ((outputEnd - outputStart) / (inputEnd - inputStart)) * (value - inputStart);
@@ -8,7 +9,7 @@ function mapRange(value, inputStart, inputEnd, outputStart, outputEnd) {
 function App() {
   const [location, setLocation] = useState({ lat: null, lng: null });
   const [circlePosition, setCirclePosition] = useState({ top: `0px`, left: `0px` });
-  const [hasVoted, setHasVoted] = useState(localStorage.getItem('hasVoted') || false);
+  const [hasVoted, setHasVoted] = useState(localStorage.getItem("hasVoted") === "true");
   const [vote, setVote] = useState(null);
 
   useEffect(() => {
@@ -55,8 +56,8 @@ function App() {
       {!hasVoted && (
         <section>
           <p>Do you believe that these signs have had a positive impact on the park?</p>
-          <button disabled={hasVoted} onClick={() => handleVote('yes')}>Yes</button>
-          <button disabled={hasVoted} onClick={() => handleVote('no')}>No</button>
+          <button className='yes-button' onClick={() => handleVote('yes')}>Yes</button>
+          <button className='no-button' onClick={() => handleVote('no')}>No</button>
         </section>
       )}
     </div>

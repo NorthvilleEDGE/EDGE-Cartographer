@@ -1,5 +1,7 @@
 .App {
   text-align: left;
+  font-size: 25px;
+  padding-left: 30px;
 }
 
 .App-map {
@@ -22,11 +24,29 @@
 
 .App-header {
   background-color: #ffffff;
-  min-height: 100vh;
+  min-height: 1605px;
   display: flex;
   flex-direction: column;
   align-items: baseline;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+button {
+  font-size: 30px;
+  padding: 20px 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  min-width: 350px;
+  border-radius: 10px;
+}
+
+button.yes-button {
+  background-color: rgb(70, 195, 70);
+}
+
+button.no-button {
+  background-color: rgb(255, 83, 83);
 }
