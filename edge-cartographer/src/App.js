@@ -8,6 +8,8 @@ function mapRange(value, inputStart, inputEnd, outputStart, outputEnd) {
 function App() {
   const [location, setLocation] = useState({ lat: null, lng: null });
   const [circlePosition, setCirclePosition] = useState({ top: `0px`, left: `0px` });
+  const [hasVoted, setHasVoted] = useState(localStorage.getItem('hasVoted') || false);
+  const [vote, setVote] = useState(null);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -28,12 +30,35 @@ function App() {
     }
   }, []);
 
+  const handleVote = (vote) => {
+    if (!hasVoted) {
+      setVote(vote);
+      setHasVoted(true);
+      localStorage.setItem('hasVoted', true);
+      const data = {
+        vote,
+        time: new Date().toISOString()
+      };
+      axios.post('https://api.sheety.co/f9d11bbf142e359bb68c10619a31a7c3/mapVotes/votes',
+        { vote: data })
+        .then(res => console.log(res))
+        .catch(err => console.error(err))
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={process.env.PUBLIC_URL + "/map.jpg"} className="App-map" alt="cass-benton-map" />
         <div className="circle" style={circlePosition}></div>
       </header>
+      {!hasVoted && (
+        <section>
+          <p>Do you believe that these signs have had a positive impact on the park?</p>
+          <button disabled={hasVoted} onClick={() => handleVote('yes')}>Yes</button>
+          <button disabled={hasVoted} onClick={() => handleVote('no')}>No</button>
+        </section>
+      )}
     </div>
   );
 }
