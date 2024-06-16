@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/EDGE-Cartographer/static/css/main.b4870d7e.css",
-    "main.js": "/EDGE-Cartographer/static/js/main.046d5e3d.js",
+    "main.css": "/EDGE-Cartographer/static/css/main.46e6c567.css",
+    "main.js": "/EDGE-Cartographer/static/js/main.5254426c.js",
     "static/js/453.d16da03a.chunk.js": "/EDGE-Cartographer/static/js/453.d16da03a.chunk.js",
     "index.html": "/EDGE-Cartographer/index.html",
-    "main.b4870d7e.css.map": "/EDGE-Cartographer/static/css/main.b4870d7e.css.map",
-    "main.046d5e3d.js.map": "/EDGE-Cartographer/static/js/main.046d5e3d.js.map",
+    "main.46e6c567.css.map": "/EDGE-Cartographer/static/css/main.46e6c567.css.map",
+    "main.5254426c.js.map": "/EDGE-Cartographer/static/js/main.5254426c.js.map",
     "453.d16da03a.chunk.js.map": "/EDGE-Cartographer/static/js/453.d16da03a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4870d7e.css",
-    "static/js/main.046d5e3d.js"
+    "static/css/main.46e6c567.css",
+    "static/js/main.5254426c.js"
   ]
 }
