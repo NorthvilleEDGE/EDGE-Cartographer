@@ -30,7 +30,7 @@ function App() {
     } else {
       console.error("Geolocation is not supported by this browser.");
     }
-  }, []);
+  }, [location]);
 
   const handleVote = (vote) => {
     if (!hasVoted) {
