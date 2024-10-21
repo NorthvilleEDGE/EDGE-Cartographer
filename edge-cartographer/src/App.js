@@ -7,10 +7,8 @@ function mapRange(value, inputStart, inputEnd, outputStart, outputEnd) {
 }
 
 function App() {
-  const [location, setLocation] = useState({ lat: null, lng: null });
   const [circlePosition, setCirclePosition] = useState({ top: `0px`, left: `0px` });
   const [hasVoted, setHasVoted] = useState(localStorage.getItem("hasVoted") === "true");
-  const [vote, setVote] = useState(null);
   const [showThanks, setShowThanks] = useState(false);
 
   useEffect(() => {
@@ -18,7 +16,6 @@ function App() {
       navigator.geolocation.watchPosition(
         function(position) {
           const { latitude, longitude } = position.coords;
-          setLocation({ lat: latitude, lng: longitude });
           setCirclePosition({
             top: `${mapRange(latitude, 42.426613, 42.409726, 0, 1590)}px`,
             left: `${mapRange(longitude, -83.483743, -83.471405, 0, 843)}px` });
@@ -30,11 +27,10 @@ function App() {
     } else {
       console.error("Geolocation is not supported by this browser.");
     }
-  }, [location]);
+  }, []);
 
   const handleVote = (vote) => {
     if (!hasVoted) {
-      setVote(vote);
       setHasVoted(true);
       localStorage.setItem('hasVoted', true);
       setShowThanks(true);
