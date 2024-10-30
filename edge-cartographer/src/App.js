@@ -38,7 +38,7 @@ function App() {
         vote,
         time: new Date().toISOString()
       };
-      axios.post('https://api.sheety.co/f9d11bbf142e359bb68c10619a31a7c3/mapVotes/votes',
+      axios.post(process.env.REACT_APP_SHEETS_LINK,
         { vote: data })
         .then(res => console.log(res))
         .catch(err => console.error(err))
